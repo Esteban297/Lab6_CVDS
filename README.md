@@ -2,6 +2,8 @@
 ## Hayden Esteban Cristancho Pinzón 2167321
 ### Parte I. Integración continua
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ca2eaf4512dc4983b524e2c7c42bea5a)](https://www.codacy.com/gh/Esteban297/Lab6_CVDS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Esteban297/Lab6_CVDS&amp;utm_campaign=Badge_Grade)
+[![CircleCI](https://circleci.com/gh/Esteban297/Lab6_CVDS/tree/master.svg?style=svg)](https://circleci.com/gh/Esteban297/Lab6_CVDS/tree/master)
 
 Ingrese al repositorio de [WebApp-Heroku-CircleCI-CI](https://github.com/PDSW-ECI/WebApp-Heroku-CircleCI-CI). en GitHub y resuelva el laboratorio allí especificado usando el proyecto creado en el  Laboratorio 5 - MVC Primefaces Introduction - 2020-2.  
  1. Haga commit y push de su repositorio local a GitHub. Abra la consola de CircleCI y verifique que el de descarga, compilación, y despliegue. Igualmente, verifique que la aplicación haya sido desplegada en Heroku.  
