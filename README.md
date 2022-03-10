@@ -9,7 +9,7 @@ Ingrese al repositorio de [WebApp-Heroku-CircleCI-CI](https://github.com/PDSW-EC
  1. Haga commit y push de su repositorio local a GitHub. Abra la consola de CircleCI y verifique que el de descarga, compilación, y despliegue. Igualmente, verifique que la aplicación haya sido desplegada en Heroku.  
       * CircleCi  
        ![c](https://github.com/Esteban297/Lab6_CVDS/blob/master/c.jpeg)  
-
+      https://lab-6cvds.herokuapp.com/
     
       
  2. Ahora, va a integrar un entorno de Análisis de Calidad de Código a su proyecto, el cual detecte contínuamente defectos asociados al mismo. Autentíquese en CODACY con su cuenta de GitHUB, y agregue el proyecto antes creado.  
