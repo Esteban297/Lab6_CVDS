@@ -1,34 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3c.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-	<style>
-		
-	</style>
+    <title> Calculadora </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet"> </link>
+    <link rel="stylesheet" href="css/style.css"></link>
 </h:head>
 <h:body>
-    <h:form id="calculadora_form">
-        <p:outputPanel>
-            <p:inputText value="#{calculadoraBean.numeros}"></p:inputText>
-        </p:outputPanel>
-        <p:outputPanel>
-        <p:outputLabel value="Mode: #{calculadoraBean.resModa}" style="display:none"></p:outputLabel>
-        </p:outputPanel>
-		<p:outputPanel>
-        <p:outputLabel value="Variance: #{calculadoraBean.resVarianza}"></p:outputLabel>
-        </p:outputPanel>
-        <p:outputPanel>
-        <p:outputLabel value="Standard Deviation: #{calculadoraBean.resDesvEstandar}"></p:outputLabel>
-        </p:outputPanel>
-        <p:outputPanel>
-        <p:outputLabel value="Mean: #{calculadoraBean.resPromedio}"></p:outputLabel>
-        </p:outputPanel>
-		<p:commandButton value="Mode" update="calculadora_form" action="#{calculadoraBean.calculateMode()}"></p:commandButton>
-		<p:commandButton value="Variance" update="calculadora_form" action="#{calculadoraBean.calculateVariance()}"></p:commandButton>
-		<p:commandButton value="StandardDeviation" update="calculadora_form" action="#{calculadoraBean.calculateStandardDeviation()}"></p:commandButton>
-		<p:commandButton value="Mean" update="calculadora_form" action="#{calculadoraBean.calculateMean()}"></p:commandButton>
-        <p:commandButton value="Borrar" update="calculadora_form" action="#{calculadoraBean.restart()}"></p:commandButton>
+    <p class="title">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icono" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="12" y1="3" x2="12" y2="21" />
+            <line x1="16.5" y1="4.5" x2="19.5" y2="7.5" />
+            <line x1="19.5" y1="4.5" x2="16.5" y2="7.5" />
+            <line x1="6" y1="4" x2="6" y2="8" />
+            <line x1="4" y1="6" x2="8" y2="6" />
+            <line x1="18" y1="16" x2="18.01" y2="16" />
+            <line x1="18" y1="20" x2="18.01" y2="20" />
+            <line x1="4" y1="18" x2="8" y2="18" />
+        </svg>
+        Statistics Calculator
+    </p>
+    <h:form id="calculadora_form" action="something.php">
+        <p:outputLabel style="display: none" value="#{calculadoraBean.mode}"/>
+        <h:panelGrid styleClass="panelGridCenter" columns="2" cellpadding="7">
+            <p:outputLabel value="Values"/>
+            <h:inputText id="ValuesInput" value="#{calculadoraBean.list}"/>
+            <p:watermark for="ValuesInput" value="e.g. 1;2;4;5;6;2" />
+
+            <br></br>
+            <p:commandButton value="Calculate Mode" update="calculadora_form" actionListener="#{calculadoraBean.calculateMode(calculadoraBean.values)}"/>
+            <h:outputText value="Mode: #{calculadoraBean.mode}"/>
+
+            <p:commandButton value="Calculate Variance" update="calculadora_form" actionListener="#{calculadoraBean.calculateVariance(calculadoraBean.values)}"/>
+            <h:outputText value="Variance: #{calculadoraBean.variance}"/>
+
+            <p:commandButton value="Calculate Standard Deviation" update="calculadora_form" actionListener="#{calculadoraBean.calculateStandardDeviation(calculadoraBean.values)}"/>
+            <h:outputText value="Standard Deviation: #{calculadoraBean.standardDeviation}"/>
+
+            <p:commandButton value="Calculate Mean" update="calculadora_form" actionListener="#{calculadoraBean.calculateMean(calculadoraBean.values)}"/>
+            <h:outputText value="Mean: #{calculadoraBean.mean}"/>
+
+            <p:commandButton styleClass="buttonRestart" value="restart" update="calculadora_form" actionListener="#{calculadoraBean.restart()}"/>
+        </h:panelGrid>
+        <div class="card">
+            <p:dataTable var="values" value="#{calculadoraBean.backup}" scrollable="true">
+                <p:column headerText="History">
+                    <h:outputText value="#{calculadoraBean.passing(values)}"/>
+                </p:column>
+            </p:dataTable>
+        </div>
     </h:form>
 </h:body>
 </html>
