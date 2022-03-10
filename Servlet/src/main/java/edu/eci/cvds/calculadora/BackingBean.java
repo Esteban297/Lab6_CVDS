@@ -1,7 +1,5 @@
 package edu.eci.cvds.calculadora;
 
-import java.lang.Math;
-import java.lang.String;
 import java.util.Arrays;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
