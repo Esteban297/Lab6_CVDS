@@ -1,0 +1,24 @@
+:root{
+    --font: #2a2a2a;
+    --faded: #FF6140;
+}
+body {
+    background:fixed;
+    background-image: linear-gradient(to top, var(--faded) 0%, white 100%);
+    font-family: 'Comic Sans MS', sans-serif;
+    color: var(--font);
+}
+.title{
+    font-size: 2rem;
+    text-align: center;
+}
+.panelGridCenter {
+    margin: 0 auto;
+}
+.icono {
+    background-color: var(--faded);
+    border-radius: 50%;
+}
+.panelGridCenter{
+    align-self: center;
+}
